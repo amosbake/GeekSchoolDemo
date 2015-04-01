@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GeekSchool.iml" filepath="$PROJECT_DIR$/GeekSchool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catchcrazycat/catchcrazycat.iml" filepath="$PROJECT_DIR$/catchcrazycat/catchcrazycat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" filepath="$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysidemenu/mysidemenu.iml" filepath="$PROJECT_DIR$/mysidemenu/mysidemenu.iml" />
+    </modules>
+  </component>
+</project>
+
