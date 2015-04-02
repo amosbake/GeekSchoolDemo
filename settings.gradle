@@ -1,1 +1,1 @@
-include ':app', ':myphonedirectory', ':catchcrazycat', ':mysidemenu'
+include ':app', ':myphonedirectory', ':catchcrazycat', ':mysidemenu', ':game2048'
