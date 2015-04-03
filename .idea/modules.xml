@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GeekSchool.iml" filepath="$PROJECT_DIR$/GeekSchool.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/card2d/card2d.iml" filepath="$PROJECT_DIR$/card2d/card2d.iml" />
       <module fileurl="file://$PROJECT_DIR$/catchcrazycat/catchcrazycat.iml" filepath="$PROJECT_DIR$/catchcrazycat/catchcrazycat.iml" />
       <module fileurl="file://$PROJECT_DIR$/game2048/game2048.iml" filepath="$PROJECT_DIR$/game2048/game2048.iml" />
       <module fileurl="file://$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" filepath="$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysidemenu/mysidemenu.iml" filepath="$PROJECT_DIR$/mysidemenu/mysidemenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartclock/smartclock.iml" filepath="$PROJECT_DIR$/smartclock/smartclock.iml" />
     </modules>
   </component>
 </project>
