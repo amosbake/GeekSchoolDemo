@@ -59,16 +59,29 @@ public class MyAdapter extends BaseAdapter {
             String content=cursor.getString(cursor.getColumnIndex(NotesDB.CONTENT));
             String time=cursor.getString(cursor.getColumnIndex(NotesDB.TIME));
             String url=cursor.getString(cursor.getColumnIndex(NotesDB.PATH));
+            String uriVideo=cursor.getString(cursor.getColumnIndex(NotesDB.VIDEO));
             contentTv.setText(content);
             timeTv.setText(time);
             if(url!=null){
                 imgiv.setImageBitmap(getImageThumbnail(url,100,100));
+                videoiv.setVisibility(View.GONE);
+            }
+            if (uriVideo!=null){
+                videoiv.setImageBitmap(getViedoThumbnail(uriVideo,100,100));
+                imgiv.setVisibility(View.GONE);
             }
         }
         return convertView;
     }
+
+    private Bitmap getViedoThumbnail(String uriVideo, int width, int height) {
+        Bitmap bitmap= null;
+        bitmap=ThumbnailUtils.createVideoThumbnail(uriVideo,MediaStore.Images.Thumbnails.MICRO_KIND);
+        bitmap=ThumbnailUtils.extractThumbnail(bitmap,width,height,ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+        return bitmap;
+    }
+
     public Bitmap getImageThumbnail(String uri,int width,int height){
-        Log.i("test",uri);
         Bitmap bitmap= null;
         BitmapFactory.Options options=new BitmapFactory.Options();
         options.inJustDecodeBounds=true;
@@ -87,8 +100,7 @@ public class MyAdapter extends BaseAdapter {
         options.inSampleSize=be;
         options.inJustDecodeBounds=false;
         bitmap=BitmapFactory.decodeFile(uri,options);
-//        bitmap=ThumbnailUtils.extractThumbnail(bitmap,width,height,ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-        Log.i("test",bitmap.getWidth()+"");
+        bitmap=ThumbnailUtils.extractThumbnail(bitmap,width,height,ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
         return bitmap;
     }
 }

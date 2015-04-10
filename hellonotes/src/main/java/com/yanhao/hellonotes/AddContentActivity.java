@@ -32,8 +32,9 @@ public class AddContentActivity extends ActionBarActivity implements View.OnClic
     private VideoView c_video;
     private NotesDB notesDB;
     private SQLiteDatabase dbWrite;
-    private File phoneFile;
+    private File phoneFile,videoFile;
     private static final int REQUEST_PHOTO=1;
+    private static final int REQUEST_Viedo=2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,10 @@ public class AddContentActivity extends ActionBarActivity implements View.OnClic
         if ("3".equals(val)){//视频
             c_img.setVisibility(View.GONE);
             c_video.setVisibility(View.VISIBLE);
+            Intent iVideo=new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+            videoFile=new File(Environment.getExternalStorageDirectory().getAbsoluteFile()+File.separator+new Date().getTime()+".mp4");
+            iVideo.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(videoFile));
+            startActivityForResult(iVideo,REQUEST_Viedo);
         }
 
 
@@ -85,6 +90,10 @@ public class AddContentActivity extends ActionBarActivity implements View.OnClic
         if (requestCode==REQUEST_PHOTO){
             Bitmap bitmap= BitmapFactory.decodeFile(phoneFile.getAbsolutePath());
             c_img.setImageBitmap(bitmap);
+        }
+        if (requestCode==REQUEST_Viedo){
+            c_video.setVideoURI(Uri.fromFile(videoFile));
+            c_video.start();
         }
     }
 
@@ -106,6 +115,9 @@ public class AddContentActivity extends ActionBarActivity implements View.OnClic
         cv.put(NotesDB.TIME,getTime());
         if(phoneFile!=null){
             cv.put(NotesDB.PATH,phoneFile.getAbsolutePath());
+        }
+        if(videoFile!=null){
+            cv.put(NotesDB.VIDEO,videoFile.getAbsolutePath());
         }
         dbWrite.insert(NotesDB.TABLE_NAME,null,cv);
     }

@@ -6,11 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private SQLiteDatabase dbWriter;
     private Button textBtn, imgBtn, videotBtn;
     private ListView lv;
@@ -18,6 +19,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private NotesDB notesDB;
     private SQLiteDatabase dbReader;
     private MyAdapter adapter;
+    private Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         videotBtn.setOnClickListener(this);
         notesDB = new NotesDB(this);
         dbReader = notesDB.getWritableDatabase();
+
     }
 
 
@@ -59,14 +62,27 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void selectDB() {
-        Cursor cursor=dbReader.query(NotesDB.TABLE_NAME,null,null,null,null,null,null);
-        adapter=new MyAdapter(this,cursor);
+        cursor = dbReader.query(NotesDB.TABLE_NAME, null, null, null, null, null, null);
+        adapter = new MyAdapter(this, cursor);
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         selectDB();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        cursor.moveToPosition(position);
+        Intent tempIntent=new Intent(this,SelectActivity.class);
+        tempIntent.putExtra(NotesDB.ID,cursor.getInt(cursor.getColumnIndex(NotesDB.ID)));
+        tempIntent.putExtra(NotesDB.CONTENT,cursor.getString(cursor.getColumnIndex(NotesDB.CONTENT)));
+        tempIntent.putExtra(NotesDB.TIME,cursor.getString(cursor.getColumnIndex(NotesDB.TIME)));
+        tempIntent.putExtra(NotesDB.PATH,cursor.getString(cursor.getColumnIndex(NotesDB.PATH)));
+        tempIntent.putExtra(NotesDB.VIDEO,cursor.getString(cursor.getColumnIndex(NotesDB.VIDEO)));
+        startActivity(tempIntent);
     }
 }
