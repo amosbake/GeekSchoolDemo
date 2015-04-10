@@ -16,7 +16,7 @@ public class NotesDB extends SQLiteOpenHelper {
     public static final String TIME="time";
 
     public NotesDB(Context context) {
-        super(context, "notes.db", null, 1);
+        super(context, "notes.db", null, 4);
     }
 
     @Override
@@ -24,14 +24,14 @@ public class NotesDB extends SQLiteOpenHelper {
         db.execSQL("create table "+TABLE_NAME+"(" +
                ID+" integer primary key autoincrement,"+
                 CONTENT+" text not null,"+
-                PATH+" text not null,"+
+                PATH+" text ,"+
                 VIDEO+" text ,"+
                 TIME+" text not null"+")");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop if exists "+TABLE_NAME);
+        db.execSQL("drop table if exists "+TABLE_NAME);
         onCreate(db);
     }
 }
