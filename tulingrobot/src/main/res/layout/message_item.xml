@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:id="@+id/robot_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_alignParentLeft="true">
+        <TextView
+                android:id="@+id/tv_robot_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"
+                android:layout_centerHorizontal="true"/>
+
+        <ImageView
+                android:id="@+id/robot_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_below="@id/tv_robot_time"
+                android:padding="10dp"
+                android:src="@drawable/robot"/>
+
+        <TextView
+                android:id="@+id/robot_text"
+                android:layout_toRightOf="@id/robot_icon"
+                android:layout_below="@id/tv_robot_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/aio_friend_bg_nor_11"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/admin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_alignParentRight="true">
+        <TextView
+                android:id="@+id/tv_admin_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"
+                android:layout_centerHorizontal="true"/>
+
+        <TextView
+                android:id="@+id/admin_text"
+                android:layout_toLeftOf="@+id/admin_icon"
+                android:layout_below="@id/tv_admin_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/aio_user_bg_nor_11"/>
+
+        <ImageView
+                android:id="@id/admin_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_admin_time"
+                android:src="@drawable/visitor"/>
+
+    </RelativeLayout>
+</RelativeLayout>

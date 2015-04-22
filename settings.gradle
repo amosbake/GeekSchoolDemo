@@ -1,1 +1,1 @@
-include ':app', ':myphonedirectory', ':catchcrazycat', ':mysidemenu', ':game2048', ':smartclock', ':card2d', ':hellonotes'
+include ':app', ':myphonedirectory', ':catchcrazycat', ':mysidemenu', ':game2048', ':smartclock', ':card2d', ':hellonotes', ':tulingrobot'

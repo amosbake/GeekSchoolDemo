@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TulingRobot</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_send">发送</string>
+    <string-array name="welcome_tips">
+        <item>您好,我是你的贴身小秘书</item>
+        <item>欢迎使用图灵机器人聊天APP</item>
+        <item>欢迎回来,很高兴为你再次服务</item>
+        <item>您好,我等您很久了</item>
+    </string-array>
+</resources>
