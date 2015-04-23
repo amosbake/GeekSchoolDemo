@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/hellonotes/hellonotes.iml" filepath="$PROJECT_DIR$/hellonotes/hellonotes.iml" />
       <module fileurl="file://$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" filepath="$PROJECT_DIR$/myphonedirectory/myphonedirectory.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysidemenu/mysidemenu.iml" filepath="$PROJECT_DIR$/mysidemenu/mysidemenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/secret/secret.iml" filepath="$PROJECT_DIR$/secret/secret.iml" />
       <module fileurl="file://$PROJECT_DIR$/smartclock/smartclock.iml" filepath="$PROJECT_DIR$/smartclock/smartclock.iml" />
       <module fileurl="file://$PROJECT_DIR$/tulingrobot/tulingrobot.iml" filepath="$PROJECT_DIR$/tulingrobot/tulingrobot.iml" />
     </modules>
